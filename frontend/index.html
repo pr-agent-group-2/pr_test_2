@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Todo App</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body hx-get="/todos" hx-target="#todo-list" hx-trigger="load">
+    <h1>Todo List</h1>
+
+    <form id="new-todo-form" hx-post="/todos" hx-target="#todo-list" hx-swap="afterbegin">
+        <input type="text" name="title" placeholder="New todo..." required />
+        <button type="submit">Add</button>
+    </form>
+
+    <ul id="todo-list"></ul>
+
+    <template id="todo-item-template">
+        <li>
+            <input type="checkbox" />
+            <span class="title"></span>
+            <button class="delete">✕</button>
+        </li>
+    </template>
+
+    <script src="main.js"></script>
+</body>
+</html>

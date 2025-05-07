@@ -1,0 +1,5 @@
+body { font-family: sans-serif; margin: 2rem; }
+ul { list-style: none; padding: 0; }
+li { display: flex; align-items: center; gap: 0.5rem; margin: 0.25rem 0; }
+.completed .title { text-decoration: line-through; color: gray; }
+button.delete { background: none; border: none; color: crimson; cursor: pointer; }
